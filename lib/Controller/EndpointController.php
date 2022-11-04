@@ -109,6 +109,10 @@ class EndpointController extends OCSController {
 			/** @var INotification $notification */
 			try {
 				$notification = $this->manager->prepare($notification, $language);
+				if($notification->getApp() == "spreed" && \OC::$server->getSession()->get('oldUserId')){
+					// Block talk notifications during impersonate session
+					continue;
+				}
 			} catch (\InvalidArgumentException $e) {
 				// The app was disabled, skip the notification
 				continue;
