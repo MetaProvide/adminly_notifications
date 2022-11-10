@@ -1,4 +1,4 @@
-# Adminly Talk
+# Adminly Notifications
 
 This is a fork of [Nextcloud Notifications](https://github.com/nextcloud/notifications)
 
