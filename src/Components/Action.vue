@@ -11,24 +11,24 @@
 		@keyup.shift.tab="handleTabUp">
 		{{ label }}
 	</a>
-	<Button v-else-if="!isWebLink"
+	<ActionButton v-else-if="!isWebLink"
 		:type="buttonType"
 		class="action-button pull-right"
 		@click="onClickActionButton">
 		{{ label }}
-	</Button>
+	</ActionButton>
 </template>
 
 <script>
 import axios from '@nextcloud/axios'
 import { showError } from '@nextcloud/dialogs'
-import Button from '@nextcloud/vue/dist/Components/Button'
+import ActionButton from '@nextcloud/vue/dist/Components/ActionButton'
 
 export default {
 	name: 'Action',
 
 	components: {
-		Button,
+		ActionButton,
 	},
 
 	props: {
